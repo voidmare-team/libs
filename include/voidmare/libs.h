@@ -15,4 +15,6 @@
 #ifndef _VOIDMARE_LIBS_H
 #define _VOIDMARE_LIBS_H
 
+#include <voidmare/libs/result.h>
+
 #endif
