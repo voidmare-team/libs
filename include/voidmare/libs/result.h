@@ -15,6 +15,10 @@
 #ifndef _VOIDMARE_LIBS_RESULT_H
 #define _VOIDMARE_LIBS_RESULT_H
 
+// =========================================================
+// Declarations related to returning error codes and result.
+// =========================================================
+
 #include <stdint.h>
 
 #ifdef __cplusplus

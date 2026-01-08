@@ -15,6 +15,10 @@
 #ifndef _VOIDMARE_LIBS_SLICE_H
 #define _VOIDMARE_LIBS_SLICE_H
 
+// =========================================================
+// Declarations related to dynamic array management.
+// =========================================================
+
 #include "result.h"
 #include <stddef.h>
 
@@ -43,7 +47,8 @@ typedef struct vm_libs_slice
 //
 // Error codes:
 // - vm_libs_err_code_allocation_failed: It function fails to allocate data.
-vm_libs_err_code_t vm_libs_slice_init(vm_libs_slice_t *slice, size_t elem_size, size_t initial_capacity);
+vm_libs_err_code_t vm_libs_slice_init(vm_libs_slice_t *slice, size_t elem_size,
+				      size_t initial_capacity);
 
 // Resizes the slice to new capacity. Does nothing if new_capacity is
 // already equal to old capacity.
