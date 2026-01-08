@@ -16,5 +16,6 @@
 #define _VOIDMARE_LIBS_H
 
 #include <voidmare/libs/result.h>
+#include <voidmare/libs/slice.h>
 
 #endif
