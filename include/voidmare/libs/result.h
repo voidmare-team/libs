@@ -30,15 +30,12 @@ extern "C"
 typedef uint16_t vm_libs_err_t;
 
 // Represents the standard error codes.
-//
-// Notes:
-//  - This is not the only source of error codes.
-//    Some headers define their own error codes.
 typedef enum vm_libs_err_code
 {
   vm_libs_err_code_ok = (vm_libs_err_t)0,
   vm_libs_err_code_allocation_failed = (vm_libs_err_t)1,
   vm_libs_err_code_ptr_null = (vm_libs_err_t)2,
+  vm_libs_err_code_out_of_bounds = (vm_libs_err_t)3,
 } vm_libs_err_code_t;
 
 // Defines standard declaration and its methods
@@ -51,7 +48,7 @@ typedef enum vm_libs_err_code
   } name##_t;                                                                  \
   inline name##_t name##_ok(type value)                                        \
   {                                                                            \
-    return (name##_t){.value = value, .code = vm_libs_err_code_ok};            \
+    return (name##_t){.code = vm_libs_err_code_ok, .value = value};            \
   }                                                                            \
   inline name##_t name##_err(vm_libs_err_t code)                               \
   {                                                                            \
