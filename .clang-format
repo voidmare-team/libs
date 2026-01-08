@@ -1,0 +1,6 @@
+BasedOnStyle: LLVM
+IndentWidth: 2
+UseTab: Always
+BreakBeforeBraces: Allman
+SpaceAfterCStyleCast: false
+IndentExternBlock: NoIndent
