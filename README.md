@@ -1,6 +1,6 @@
 # `voidmare-libs`
 
-Modular set of safe libraries in C11 used by VOIDMARE team.
+Modular set of safe libraries in C11.
 
 # Questions section
 
