@@ -24,7 +24,7 @@ jobs:
             sudo apt-get install -y build-essential cmake clang-format clang-tidy clangd
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
             brew update
-            brew install cmake clang-format clang-tidy clangd
+            brew install cmake llvm
           fi
           
       - name: Check code formatting
