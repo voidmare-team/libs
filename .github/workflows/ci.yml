@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang clang-tidy cmake clangd
+          sudo apt-get install -y clang clang-tidy cmake
   
       - name: Configure CMake
         run: cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1
