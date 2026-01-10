@@ -42,7 +42,7 @@ jobs:
           sudo apt-get install -y clang clang-tidy cmake
 
       - name: Configure CMake
-        run: cmake -S . -B build
+        run: cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
       - name: Run clang-tidy checks
         run: |
