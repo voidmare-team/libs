@@ -50,7 +50,7 @@ jobs:
           FILES=$(find . -name '*.c' -o -name '*.h')
           EXIT_CODE=0
           for f in $FILES; do
-            clang-tidy "$f" -- -I. || EXIT_CODE=1
+            clang-tidy -p build/ "$f" -- -I. || EXIT_CODE=1
           done
           if [ $EXIT_CODE -ne 0 ]; then
             echo "clang-tidy found issues."
