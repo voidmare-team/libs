@@ -23,10 +23,22 @@ jobs:
         run: |
           echo "Checking C code formatting with clang-format..."
           FILES=$(find . -name '*.c' -o -name '*.h')
-          FORMAT_DIFF=$(clang-format -style=file -output-replacements-xml $FILES | grep "<replacement " || true)
-          if [ -n "$FORMAT_DIFF" ]; then
-            echo "Code is not properly formatted. Please run clang-format."
+          UNFORMATTED=()
+      
+          for FILE in $FILES; do
+            if [ -n "$(clang-format -style=file -output-replacements-xml "$FILE" | grep '<replacement ')" ]; then
+              UNFORMATTED+=("$FILE")
+            fi
+          done
+      
+          if [ ${#UNFORMATTED[@]} -ne 0 ]; then
+            echo "The following files are not properly formatted:"
+            for F in "${UNFORMATTED[@]}"; do
+              echo "  $F"
+            done
             exit 1
+          else
+            echo "All files are properly formatted."
           fi
 
   clang-tidy-check:
